@@ -14,5 +14,4 @@ public class CompleteNumber {
 
         return count == number;
     }
-
 }

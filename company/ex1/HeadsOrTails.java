@@ -31,7 +31,6 @@ public class HeadsOrTails {
         return "Сount of heads: " + head + " Count of trails: " + trail;
     }
 
-
 }
 
 
