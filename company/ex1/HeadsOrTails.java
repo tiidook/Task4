@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class HeadsOrTails {
 
-    public static final int HEAD=0;
-    public static final int TRAIL=1;
-    public static final int CountOfCasts=1000;
+    public static final int HEAD = 0;
+    public static final int TRAIL = 1;
+    public static final int CountOfCasts = 1000;
 
     public static String getHeadsTrails() {
         int head = 0;
@@ -20,7 +20,7 @@ public class HeadsOrTails {
 
                 trail += 1;
 
-            }else{
+            }else {
 
                 head += 1;
 
