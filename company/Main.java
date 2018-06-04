@@ -14,25 +14,26 @@ public class Main {
         String response=HeadsOrTails.getHeadsTrails();
         View.print(response);
 
+        int number=5123745;
 
+        View.print("Max number is: " +  Number.getMaxNum(number));
 
-        int number=1234321;
+        number=1234321;
         boolean isPalindrom=Number.getPalindrom(number);
         View.print("Is this number " + number + " palindrom? " + isPalindrom);
 
-        number=11;
+        number=113;
         boolean isPrime=Number.getPrimeNumber(number);
         View.print("Is this number " + number + " prime? " + isPrime);
 
         number=123;
         System.out.println(Number.getDevisors(number));
 
-        int a=10;
-        int b=24;
+
         System.out.println("Nod = " + Number.getNod(10,24));
         System.out.println("Nok = " + Number.getNok(10,24));
 
-        number=1142497;
+        number=1274785;
         View.print("Number is " + number + " count of different numbers= " + Number.getCountDifferentNumbers(number));
 
         number =6 ;
@@ -41,7 +42,7 @@ public class Main {
         View.print("Number is " + number + " is it complete number " + CompleteNumber.checkPerfectNumber(number));
         number =496;
         View.print("Number is " + number + " is it complete number " + CompleteNumber.checkPerfectNumber(number));
-        number =8128;
+        number =638;
         View.print("Number is " + number + " is it complete number " + CompleteNumber.checkPerfectNumber(number));
 
 

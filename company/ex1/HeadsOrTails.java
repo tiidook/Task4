@@ -6,23 +6,23 @@ public class HeadsOrTails {
 
     public static final int HEAD=0;
     public static final int TRAIL=1;
+    public static final int CountOfCasts=1000;
 
     public static String getHeadsTrails() {
+        int head = 0;
+        int trail = 0;
 
-        int head=0,trail=0;
-        int check=0;
         Random random = new Random();
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < CountOfCasts; i++) {
 
-            check=random.nextInt(TRAIL-HEAD+TRAIL)+HEAD;
-            if (check==TRAIL){
+            if (random.nextInt(TRAIL - HEAD + TRAIL) + HEAD == TRAIL){
 
-                trail+=1;
+                trail += 1;
 
             }else{
 
-                head+=1;
+                head += 1;
 
             }
 

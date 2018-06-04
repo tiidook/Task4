@@ -2,85 +2,79 @@ package com.company.ex2;
 
 public class Number {
 
-    public static final int Digit=10;
+    public static final int DIGIT = 10;
+    public static final int MINPRIMENUMBER = 2;
 
     public static int getMaxNum(int number){
+        int temp = 0;
+        number = number > 0 ? number : -number;
 
-        int temp=0;
+        while (number > 0){
 
-        while (number>0){
+           if (number % DIGIT > temp){
 
-           if(number%Digit>temp){
-
-               temp=number%Digit;
+               temp = number % DIGIT;
 
            }
-            number/=Digit;
+            number /= DIGIT;
         }
 
         return temp;
     }
 
     public static boolean getPalindrom(int number){
+        int temp = number;
+        int backward = 0;
+        number = number > 0 ? number : -number;
 
-        int temp=number;
-        int backward =0;
+        while (temp > 0){
 
-        while (temp>0){
-
-            backward=backward*Digit+temp%Digit;
-            temp/=Digit;
+            backward = backward * DIGIT + temp % DIGIT;
+            temp /= DIGIT;
 
         }
 
-         return backward==number;
+         return backward == number;
     }
 
     public static boolean getPrimeNumber(int number){
+        number = number > 0 ? number : -number;
 
-        boolean isPime=true;
+        for (int i = MINPRIMENUMBER; i < number; i++){
 
-        for (int i=2;i<number;i++){
+            if (number % i == 0){
 
-            if (number%i==0){
-
-                isPime=false;
-                break;
+                return false;
 
             }
         }
-        return isPime;
+        return true;
     }
 
     public static String getDevisors(int number){
-
         String response = "All the prime devisors: ";
-        int temp=0;
+        int temp = 0;
+        number = number > 0 ? number : -number;
 
-        for (int i=2;i<=number;i++){
+        for (int i = MINPRIMENUMBER; i <= number; i++){
 
-            if(number%i==0){
+            if (number % i == 0){
 
-                if(getPrimeNumber(i)){
-                    temp=i;
-                    response+="(" + temp + ")";
+                if (getPrimeNumber(i)){
+                    temp = i;
+                    response += "(" + temp + ")";
                 }
             }
         }
 
-        if(temp==0){
-
-            response = "There are no one prime devisor ";
-        }
-
-        return response;
+        return temp == 0 ? "There are no one prime devisor" : response;
 
     }
 
     //Residual algorithm
     public static int getNod(int a, int b) {
+        int temp;
 
-        int temp=0;
         while (b != 0) {
 
             temp = b;
@@ -94,30 +88,31 @@ public class Number {
 
     public static int getNok(int a,int b){
 
-        return a*b/getNod(a,b);
+        return a * b / getNod(a,b);
 
     }
 
     public static int getCountDifferentNumbers(int number) {
-        int count=0;
-        int tempNumber;
+        int count = 0;
+        number = number > 0 ? number : -number;
 
-        for (int i = number;i>0;i--) {
-            tempNumber=number;
+        for (int i = number; i > 0; i--) {
+            int tempNumber = number;
+
             while (tempNumber > 0) {
-                if (tempNumber % Digit == i) {
+
+                if (tempNumber % DIGIT == i) {
                     count++;
                     break;
                 }
-                tempNumber /= Digit;
+
+                tempNumber /= DIGIT         ;
             }
         }
 
         return count;
 
     }
-
-
 
 
 }
