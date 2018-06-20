@@ -3,7 +3,6 @@ package com.company.ex2;
 public class Number {
 
     public static final int DIGIT = 10;
-    public static final int MINPRIMENUMBER = 2;
 
     public static int getMaxNum(int number){
         int temp = 0;
@@ -12,13 +11,10 @@ public class Number {
         while (number > 0){
 
            if (number % DIGIT > temp){
-
                temp = number % DIGIT;
-
            }
             number /= DIGIT;
         }
-
         return temp;
     }
 
@@ -31,21 +27,19 @@ public class Number {
 
             backward = backward * DIGIT + temp % DIGIT;
             temp /= DIGIT;
-
         }
-
          return backward == number;
     }
 
     public static boolean getPrimeNumber(int number){
         number = number > 0 ? number : -number;
+        int count = number / 2;
 
-        for (int i = MINPRIMENUMBER; i < number; i++){
+        for (int i = 2; i < count; i++){
 
             if (number % i == 0){
 
                 return false;
-
             }
         }
         return true;
@@ -55,8 +49,9 @@ public class Number {
         String response = "All the prime devisors: ";
         int temp = 0;
         number = number > 0 ? number : -number;
+        int maxValue = number / 2;
 
-        for (int i = MINPRIMENUMBER; i <= number; i++){
+        for (int i = 2; i <= maxValue; i++){
 
             if (number % i == 0){
 
@@ -66,21 +61,17 @@ public class Number {
                 }
             }
         }
-
         return temp == 0 ? "There are no one prime devisor" : response;
 
     }
 
-    //Residual algorithm
     public static int getNod(int a, int b) {
         int temp;
 
         while (b != 0) {
 
             temp = b;
-
             b = a % b;
-
             a = temp;
         }
         return a;
@@ -89,7 +80,6 @@ public class Number {
     public static int getNok(int a,int b){
 
         return a * b / getNod(a,b);
-
     }
 
     public static int getCountDifferentNumbers(int number) {
@@ -105,13 +95,10 @@ public class Number {
                     count++;
                     break;
                 }
-
                 tempNumber /= DIGIT         ;
             }
         }
-
         return count;
-
     }
 
 }

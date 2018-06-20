@@ -1,17 +1,22 @@
 package com.company.ex3;
 
+import com.company.ex2.Number;
+
 public class CompleteNumber {
 
-    public static boolean checkPerfectNumber(int number){
-        int count = 0;
+    public static boolean checkPerfectNumber(int number) {
+        int complete = 0;
+        int count = number / 2;
+        if (!Number.getPrimeNumber(number)) {
 
-        for (int i = 1; i < number; i++){
+            for (int i = 1; i <= count; i++) {
 
-            if (number % i == 0){
-                count += i;
+                if (number % i == 0) {
+                    complete += i;
+                }
             }
+            return complete == number;
         }
-
-        return count == number;
+        return false;
     }
 }

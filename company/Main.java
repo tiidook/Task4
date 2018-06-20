@@ -11,7 +11,7 @@ public class Main {
         String start="How many Heads and Trails? ";
         View.print(start);
 
-        String response=HeadsOrTails.getHeadsTrails();
+        String response=HeadsOrTails.getHeadsTrails(1000);
         View.print(response);
 
         int number=5123745;
@@ -22,7 +22,7 @@ public class Main {
         boolean isPalindrom=Number.getPalindrom(number);
         View.print("Is this number " + number + " palindrom? " + isPalindrom);
 
-        number=113;
+        number=122;
         boolean isPrime=Number.getPrimeNumber(number);
         View.print("Is this number " + number + " prime? " + isPrime);
 
